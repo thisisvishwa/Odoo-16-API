@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_api_key_model,api.model_access_api_key,model_api_key,group_api_user,1,1,1,1
+access_api_access_rule_model,api.model_access_api_access_rule,model_api_access_rule,group_api_user,1,1,1,1
+access_api_endpoint_model,api.model_access_api_endpoint,model_api_endpoint,group_api_user,1,1,1,1

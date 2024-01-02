@@ -1,0 +1,43 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Group for API Users -->
+        <record id="group_api_user" model="res.groups">
+            <field name="name">API User</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <!-- Access Rights for API Key Model -->
+        <record id="access_api_key_model" model="ir.model.access">
+            <field name="name">access.api.key.model</field>
+            <field name="model_id" ref="model_api_key"/>
+            <field name="group_id" ref="group_api_user"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <!-- Access Rights for API Access Rule Model -->
+        <record id="access_api_access_rule_model" model="ir.model.access">
+            <field name="name">access.api.access.rule.model</field>
+            <field name="model_id" ref="model_api_access_rule"/>
+            <field name="group_id" ref="group_api_user"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <!-- Access Rights for API Endpoint Model -->
+        <record id="access_api_endpoint_model" model="ir.model.access">
+            <field name="name">access.api.endpoint.model</field>
+            <field name="model_id" ref="model_api_endpoint"/>
+            <field name="group_id" ref="group_api_user"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>

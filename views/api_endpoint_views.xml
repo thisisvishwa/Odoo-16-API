@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+
+        <!-- API Endpoint Tree View -->
+        <record id="api_endpoint_tree_view" model="ir.ui.view">
+            <field name="name">api.endpoint.tree</field>
+            <field name="model">api.endpoint</field>
+            <field name="arch" type="xml">
+                <tree string="API Endpoints">
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="api_key_id"/>
+                    <field name="route"/>
+                    <field name="method"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- API Endpoint Form View -->
+        <record id="api_endpoint_form_view" model="ir.ui.view">
+            <field name="name">api.endpoint.form</field>
+            <field name="model">api.endpoint</field>
+            <field name="arch" type="xml">
+                <form string="API Endpoint">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="model_id"/>
+                            <field name="api_key_id"/>
+                            <field name="route"/>
+                            <field name="method"/>
+                            <field name="active"/>
+                        </group>
+                        <notebook>
+                            <page string="Parameters">
+                                <field name="parameter_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="field_id"/>
+                                        <field name="required"/>
+                                        <field name="default_value"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Access Rules">
+                                <field name="access_rule_ids" context="{'default_endpoint_id': active_id}">
+                                    <tree>
+                                        <field name="group_id"/>
+                                        <field name="perm_read"/>
+                                        <field name="perm_write"/>
+                                        <field name="perm_create"/>
+                                        <field name="perm_unlink"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- API Endpoint Action -->
+        <record id="action_api_endpoint" model="ir.actions.act_window">
+            <field name="name">API Endpoints</field>
+            <field name="res_model">api.endpoint</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="api_endpoint_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Define API endpoints to allow external applications to interact with Odoo models.
+                </p>
+            </field>
+        </record>
+
+        <!-- API Endpoint Menu Item -->
+        <menuitem id="api_menu" name="API" sequence="5"/>
+        <menuitem id="api_endpoint_menu" name="Endpoints" parent="api_menu" action="action_api_endpoint" sequence="1"/>
+
+    </data>
+</odoo>
