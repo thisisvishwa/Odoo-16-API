@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+
+        <!-- API Key Tree View -->
+        <record id="api_key_tree_view" model="ir.ui.view">
+            <field name="name">api.key.tree.view</field>
+            <field name="model">api.key</field>
+            <field name="arch" type="xml">
+                <tree string="API Keys">
+                    <field name="name"/>
+                    <field name="key"/>
+                    <field name="user_id"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- API Key Form View -->
+        <record id="api_key_form_view" model="ir.ui.view">
+            <field name="name">api.key.form.view</field>
+            <field name="model">api.key</field>
+            <field name="arch" type="xml">
+                <form string="API Key">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="key"/>
+                            <field name="user_id"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- API Key Action -->
+        <record id="action_api_key" model="ir.actions.act_window">
+            <field name="name">API Keys</field>
+            <field name="res_model">api.key</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="api_key_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new API Key
+                </p>
+            </field>
+        </record>
+
+        <!-- API Key Menu Item -->
+        <menuitem id="api_menu" name="API Management" sequence="10"/>
+        <menuitem id="api_key_menu" name="API Keys" parent="api_menu" sequence="1" action="action_api_key"/>
+
+    </data>
+</odoo>

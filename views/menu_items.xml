@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+        <!-- Main API module menu item -->
+        <menuitem id="api_menu"
+                  name="API Management"
+                  sequence="10"
+                  groups="group_api_user"/>
+
+        <!-- Submenu items for API Management -->
+        <menuitem id="menu_api_key"
+                  name="API Keys"
+                  parent="api_menu"
+                  action="api_key_tree_view"
+                  sequence="10"
+                  groups="group_api_user"/>
+
+        <menuitem id="menu_api_access_rule"
+                  name="API Access Rules"
+                  parent="api_menu"
+                  action="api_access_rule_tree_view"
+                  sequence="20"
+                  groups="group_api_user"/>
+
+        <menuitem id="menu_api_endpoint"
+                  name="API Endpoints"
+                  parent="api_menu"
+                  action="api_endpoint_tree_view"
+                  sequence="30"
+                  groups="group_api_user"/>
+
+    </data>
+</odoo>

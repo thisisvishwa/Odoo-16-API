@@ -1,0 +1,78 @@
+<templates>
+    <t t-name="api_module_template.api_key_list">
+        <div class="api_key_list">
+            <h3>API Keys</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Key</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="api_keys" t-as="key">
+                        <td><t t-esc="key.name"/></td>
+                        <td><t t-esc="key.key"/></td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+
+    <t t-name="api_module_template.api_access_rule_list">
+        <div class="api_access_rule_list">
+            <h3>API Access Rules</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Allowed Endpoints</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="api_access_rules" t-as="rule">
+                        <td><t t-esc="rule.name"/></td>
+                        <td><t t-esc="rule.endpoints"/></td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+
+    <t t-name="api_module_template.api_endpoint_list">
+        <div class="api_endpoint_list">
+            <h3>API Endpoints</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>Method</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="api_endpoints" t-as="endpoint">
+                        <td><t t-esc="endpoint.name"/></td>
+                        <td><t t-esc="endpoint.model"/></td>
+                        <td><t t-esc="endpoint.method"/></td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+</templates>

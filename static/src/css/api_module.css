@@ -1,0 +1,106 @@
+/* API Module Styles */
+.api_module_container {
+    padding: 15px;
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.api_module_header {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.api_module_form_group {
+    margin-bottom: 15px;
+}
+
+.api_module_label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.api_module_input,
+.api_module_select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.api_module_button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.api_module_button:hover {
+    background-color: #4cae4c;
+}
+
+.api_module_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.api_module_table th,
+.api_module_table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.api_module_table th {
+    background-color: #f2f2f2;
+}
+
+.api_module_alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.api_module_alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.api_module_alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* Specific styles for API Key, Access Rule, and Endpoint lists */
+#api_key_list,
+#api_access_rule_list,
+#api_endpoint_list {
+    list-style: none;
+    padding: 0;
+}
+
+#api_key_list li,
+#api_access_rule_list li,
+#api_endpoint_list li {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+#api_key_list li:hover,
+#api_access_rule_list li:hover,
+#api_endpoint_list li:hover {
+    background-color: #f5f5f5;
+}
